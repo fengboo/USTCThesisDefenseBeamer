@@ -1,0 +1,84 @@
+\documentclass[xetex,mathserif,serif,handout]{beamer}
+\usepackage{style}
+\addbibresource{sample_ref.bib}
+
+
+\begin{document}
+	\setbeamertemplate{footline}{}
+	\title[页脚中的简写标题]{主\\标题}
+	\author{张楚岚}
+	\supervisor{张之维~教授}
+	\id{BA20020002}
+	\institute{一人之下}
+	\date{\today}
+
+	\frame{\titlepage}
+
+	\begin{frame}
+		\frametitle{目录}
+		\makecontents
+	\end{frame}
+
+	\section{研究背景}
+	\begin{frame}
+		\frametitle{研究背景}
+		国外很牛B，中国很牛B，我研究的内容很牛B。\cite{wootters1982single}
+	\end{frame}
+
+	\section{第二节}
+	\subsection{第二节第一部分}
+	\begin{frame}
+		\frametitle{标题}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.8\textwidth]{ustc_logo_name.png}
+			\caption{这里是Caption。}
+		\end{figure}
+	\end{frame}
+	\subsection{第二节第二部分}
+	\begin{frame}
+		\frametitle{标题}
+	\end{frame}
+	\subsection{第二节第三部分}
+	\begin{frame}
+		\frametitle{标题}
+	\end{frame}
+
+
+	\section{第三节}
+	\subsection{第三节第一部分}
+	\begin{frame}
+		\frametitle{标题}
+	\end{frame}
+	\subsection{第三节第二部分}
+	\begin{frame}
+		\frametitle{标题}
+	\end{frame}
+	\subsection{第三节第三部分}
+	\begin{frame}
+		\frametitle{标题}
+	\end{frame}
+
+	\section{第四节}
+	\begin{frame}
+		\frametitle{标题}
+	\end{frame}
+
+	\section{总结和展望}
+	\begin{frame}
+		\frametitle{标题}
+	\end{frame}
+
+	\setbeamertemplate{footline}[footlineoff]%取消页脚
+	\begin{frame}[noframenumbering]
+		\thanks
+	\end{frame}
+	\setbeamertemplate{footline}[footlineon]%添加页脚
+
+	%\setbeamertemplate{footline}[footlineoff]%取消页脚
+	\begin{frame}[noframenumbering]{Backup}
+		工作内容总结
+	\end{frame}
+	%\setbeamertemplate{footline}[footlineon]%添加页脚
+
+\end{document}
