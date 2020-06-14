@@ -6,6 +6,8 @@
 \usepackage{color,xcolor}
 \graphicspath{{figures/}}
 
+%\setmainfont{Times New Roman}
+\setmainfont{Arial}
 \setCJKmainfont[Path="fonts/",BoldFont={SourceHanSansCN-Heavy.otf}]{SourceHanSansCN-Normal.otf}
 \setCJKfamilyfont{zhsong}[AutoFakeBold = {2.17}]{SimSun}
 \renewcommand*{\songti}{\CJKfamily{zhsong}}
@@ -52,7 +54,8 @@
 \setbeamertemplate{blocks}[rounded][shadow=false]
 \setbeamertemplate{block title}[rounded]
 \setbeamertemplate{section in toc}[sections numbered]
-\setbeamertemplate{subsection in toc}[subsections numbered]
+%\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{subsection in toc}[square]
 \setbeamertemplate{title page}
 {
 	\vfill
@@ -114,7 +117,7 @@
 	\parbox[t]{.95\textwidth}
 	{
 		\begin{minipage}[c][0.75\textheight]{\textwidth}
-			\tableofcontents
+			\tableofcontents[hideallsubsections]
 		\end{minipage}
 	}
 	\end{spacing}
@@ -154,7 +157,8 @@
 			\parbox[t]{.95\textwidth}
 			{
 				\begin{minipage}[c][0.75\textheight]{\textwidth}
-					\tableofcontents[currentsection]
+					%\tableofcontents[currentsection]
+					\tableofcontents[currentsection,subsectionstyle=show/show/hide]%show,shaded,hide
 				\end{minipage}
 			}
 		\end{spacing}
@@ -171,10 +175,13 @@
 			\parbox[t]{.95\textwidth}
 			{
 				\begin{minipage}[c][0.75\textheight]{\textwidth}
-					\tableofcontents[currentsection,currentsubsection]
+					%\tableofcontents[currentsection,currentsubsection]
+					\tableofcontents[currentsection,subsectionstyle=show/shaded/hide]%show,shaded,hide
 				\end{minipage}
 			}
 		\end{spacing}
 	\end{frame}
 	\setbeamertemplate{footline}[footlineon]%添加页脚
 }
+
+
