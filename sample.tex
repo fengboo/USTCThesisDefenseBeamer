@@ -1,60 +1,172 @@
-\documentclass[xetex,mathserif,serif,handout]{beamer}
+\documentclass[10pt]{beamer}	%打印幻灯片
+%\documentclass[10pt,handout]{beamer}	%打印手稿
 \usepackage{style}
 \addbibresource{sample_ref.bib}
+\usepackage{pgfpages}	%打印6合1用
+%\pgfpagesuselayout{6 on 1}[a4paper,border shrink=5mm]	%打印6合1用
+%\setbeameroption{show notes on second screen=right}	%在PDF右侧打印注释\note{}
+\setbeameroption{hide notes}
 
+%%%%%%%%%%%%%%%
+%%打印幻灯片带有动画
+%%打印手稿没有动画
+%%打印6合1会在同一页显示6页幻灯片，也可以将6 on 1改为2 on 1等
+%%%%%%%%%%%%%%%
+
+%定义两个蓝色命令，用于强调显示
+\newcommand{\Blue}{\bfseries \color{njuPurple}}
+\newcommand{\blue}{\color{njuPurple}}
 
 \begin{document}
 \setbeamertemplate{footline}{}
-\title[页脚中的简写标题]{主\\标题}
+\title[炁体源流与天师度]{炁体源流与天师度\\的关键技术研究}	%方括号内为页脚中的简写标题，花括号内为标题，标题控制在一至两行，两行中用双右斜线\\分开
 \author{张楚岚}
 \supervisor{张之维~教授}
-\id{BA20020002}
+\id{BA20200020}
 \institute{一人之下}
 \date{\today}
 
 \frame{\titlepage}
 
 \begin{frame}
-	\frametitle{目录}
-	\makecontents
+\frametitle{目录}
+\makecontents
 \end{frame}
 
 \section{研究背景}
+\begin{frame}[fragile]
+\frametitle{研究背景}
+国外很牛B，中国很牛B，我研究的内容很牛B。\cite{wootters1982single}
+
+虽然可以加参考文献，不过一般{\Blue 不建议}在幻灯片中加参考文献，会分散听众的注意力。
+
+这里演示一下{\Blue Blue}和{\blue blue}的效果。
+
+使用方法分别为\verb|{\Blue <文字>}|和\verb|{\blue <文字>}|。
+\end{frame}
+
 \begin{frame}
-	\frametitle{研究背景}
-	国外很牛B，中国很牛B，我研究的内容很牛B。\cite{wootters1982single}
+\frametitle{异人发展趋势}
+这里介绍一下columns和block的用法。
+\begin{columns}[t]
+\begin{column}{0.33\textwidth}
+\begin{block}{标准化}
+目前国内外异人尚无统一的标准。猫猫狗狗都称自己异人。建立标准的异人体系非常重要。
+\end{block}
+\end{column}
+\begin{column}{0.33\textwidth}
+\begin{block}{现代化}
+虽然天师府等已经融入现代社会，但有些山沟里仍有些与现代社会脱节的练炁世家。
+\end{block}
+\end{column}
+\begin{column}{0.33\textwidth}
+\begin{block}{健康化}
+涉及鬼尸妖魔的异人不符合社会发展的主流价值观，应该加强教育引导。
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{关于目录}
+\begin{itemize}
+\item 目录为{\blue 二级目录}，一级目录section控制在四至六个，二级目录subsection控制在四个以内。
+\item 每一页幻灯片的标题放在\verb|\frametitle{<标题>}|内，不作为目录。
+也可以直接放在\verb|\begin{frame}{<标题>}|内。
+\item 如果在幻灯片中使用了\verb|\verb|代码，要在\verb|\begin{frame}|后增加\verb|[fragile]|，即\verb|\begin{frame}[fragile]|
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{字体大小}
+字体按从小到大分别为
+
+\verb|\tiny \scriptsize \footnotesize \small \normalsize|
+\verb|\large \Large \LARGE \huge \Huge|
+
+\tiny 
+凡夫俗子张之维
+
+\scriptsize
+不摇碧莲张楚岚
+
+\footnotesize
+五百一晚贾正亮
+
+\small
+一贫如洗王道长
+
+\normalsize
+机智一比冯宝宝
+
+\large
+不听八卦诸葛青
+
+\Large
+一生无暇陆老爷
+
+\LARGE
+过大
+
+\huge
+用不到
+
+\Huge
+真用不到
 \end{frame}
 
 \section{第二节}
-\subsection{第二节第一部分}
+
+\subsection{插入图片}
+
 \begin{frame}
-	\frametitle{标题}
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.8\textwidth]{ustc_logo_name.png}
-		\caption{这里是Caption。}
-	\end{figure}
-\end{frame}
-\subsection{第二节第二部分}
-\begin{frame}
-	\frametitle{标题}
-\end{frame}
-\subsection{第二节第三部分}
-\begin{frame}
-	\frametitle{标题}
+\frametitle{图片}
+虽然图表可以插入说明，但在图少时不建议加入说明，在图较多时可适当标注。
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{ustc_logo_name.png}
+\caption{这里是Caption。}
+\end{figure}
 \end{frame}
 
+\subsection{插入表格}
+
+\begin{frame}
+\frametitle{表格}
+表格推荐使用三线表。
+\begin{table}[htb]
+\centering\scriptsize
+% \caption{当世异人战斗力对比}
+ \label{tab:TSVSOther}
+ \begin{tabular}{cccc}
+\toprule
+姓名 & 所属 & 绝技 & 战斗力（单位：巴掌）\\
+\midrule
+张之维 & 天师府  & 天师度 & 999\\
+丁嵨安 & 全性 & 不明 & 10\\
+陆瑾 & 三一门 & 通天箓 & 1\\
+王也 & 武当 & 风后奇门 & 0.3\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
 
 \section{第三节}
+
 \subsection{第三节第一部分}
+
 \begin{frame}
 	\frametitle{标题}
 \end{frame}
+
 \subsection{第三节第二部分}
+
 \begin{frame}
 	\frametitle{标题}
 \end{frame}
+
 \subsection{第三节第三部分}
+
 \begin{frame}
 	\frametitle{标题}
 \end{frame}
@@ -66,7 +178,51 @@
 
 \section{总结和展望}
 \begin{frame}
-	\frametitle{标题}
+\frametitle{工作总结}
+介绍自己的工作
+\end{frame}
+
+\begin{frame}
+\frametitle{创新点}
+\begin{columns}[t]
+\begin{column}{0.33\textwidth}
+\begin{block}{异人界}
+\begin{itemize}
+\item 提出异人标准化方案
+\item 现代化
+\item 指出健康化是异人发展的重要趋势
+\end{itemize}
+\end{block}
+\end{column}
+\pause
+\begin{column}{0.33\textwidth}
+\begin{block}{炁体源流}
+\begin{itemize}
+\item 提出㤅体源流远程化方案
+\item 在通信中的应用
+\item 对异人现代化发展的潜力
+\end{itemize}
+\end{block}
+\end{column}
+\pause
+\begin{column}{0.33\textwidth}
+\begin{block}{天师度}
+\begin{itemize}
+\item 提出天师度在知识传承上的方案
+\item 在教学上的应用
+\item 对全人类的巨大价值
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{已发表的论文}
+\begin{enumerate}
+\item {\Blue{Zhang Chulan}}, Feng Baobao, Xu si, et al. Study on Shougongsha [J]. Review of Yiren, 2020, 30(2): 05532.
+\item {\Blue{Zhang Chulan}}, Feng Baobao, Wang Ye, et al. Study on mairen [C]//2020 233th International Conference on Yiren. 2020: 168-179.
+\end{enumerate}
 \end{frame}
 
 \setbeamertemplate{footline}[footlineoff]%取消页脚
@@ -78,7 +234,9 @@
 %\setbeamertemplate{footline}[footlineoff]%取消页脚
 \section*{Backup}
 \begin{frame}[noframenumbering]{Backup}
-	工作内容总结
+幻灯片正篇中用到的数学推导或其他的补充说明。
+
+Backup不在目录上显示，并且不计算在正文的页码中，但可通过底部导航条点击进入。
 \end{frame}
 %\setbeamertemplate{footline}[footlineon]%添加页脚
 

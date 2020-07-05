@@ -6,16 +6,33 @@
 \usepackage{color,xcolor}
 \graphicspath{{figures/}}
 
-%\setmainfont{Times New Roman}
-\setmainfont{Arial}
-\setCJKmainfont[Path="fonts/",BoldFont={SourceHanSansCN-Heavy.otf}]{SourceHanSansCN-Normal.otf}
+%可选的一些宏包
+\usepackage{graphics}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{booktabs}	%三线表
+%\usepackage{chemformula}		%化学式
+%\usepackage{tikz}	%画圆
+%\usepackage{caption}	%图表标题
+%\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}} 	%表格内换行命令
+%\tabincell{c}{AAA \\BBB}	%表格内换行的用法
+
+
+\setCJKmainfont[Path="fonts/",BoldFont={SourceHanSansCN-Bold.otf}]{SourceHanSansCN-Normal.otf}	%思源黑体按细至粗 ExtrlLight Light Normal Regular Medium Bold Heavy
 \setCJKfamilyfont{zhsong}[AutoFakeBold = {2.17}]{SimSun}
 \renewcommand*{\songti}{\CJKfamily{zhsong}}
 \setCJKfamilyfont{zhkai}[AutoFakeBold = {2.17}]{KaiTi}
 \renewcommand*{\kaishu}{\CJKfamily{zhkai}}
 %\setCJKfamilyfont{zhhei}[AutoFakeBold = {2.17}]{SimHei}
-\setCJKfamilyfont{zhhei}[Path="fonts/",BoldFont={SourceHanSansCN-Heavy.otf}]{SourceHanSansCN-Regular.otf}
+\setCJKfamilyfont{zhhei}[Path="fonts/",BoldFont={SourceHanSansCN-Medium.otf}]{SourceHanSansCN-Regular.otf}
 \renewcommand*{\heiti}{\CJKfamily{zhhei}}
+
+\setmainfont[BoldFont={Arial Bold},ItalicFont={Arial Italic}]{Arial}	%衬线字体
+\setsansfont[BoldFont={Arial Bold},ItalicFont={Arial Italic}]{Arial}	%无衬线字体
+\setmonofont[BoldFont={Arial Bold},ItalicFont={Arial Italic}]{Arial}	%等宽字体
+\sffamily
+%幻灯片中推荐使用无衬线字体，这里把所有字体全设置成Arial，如有需求可自行更改
 
 \setbeamerfont{title}{family=\zihao{3}\bfseries}
 \setbeamerfont{frametitle}{family=\zihao{-3}\bfseries}
@@ -25,9 +42,9 @@
 \setbeamerfont{id}{family=\zihao{5}\kaishu}
 \setbeamerfont{supervisor}{family=\zihao{5}\kaishu}
 \setbeamerfont{date}{family=\zihao{5}\kaishu}
-\setbeamerfont{caption}{family=\zihao{-5}\kaishu}
+\setbeamerfont{caption}{family=\zihao{6}\kaishu}
 \setbeamerfont{footnote}{family=\zihao{-6}\kaishu}
-\setbeamerfont{section in toc}{family=\zihao{5}\heiti}
+\setbeamerfont{section in toc}{family=\zihao{5}\heiti \bfseries}
 %\setbeamerfont{subsection in toc}{family=\zihao{-5}\songti}
 \setbeamerfont{subsection in toc}{family=\zihao{-5}\heiti}
 \setbeamerfont{section number projected}{family=\usebeamerfont{section in toc}}
@@ -165,23 +182,26 @@
 	\end{frame}
 	\setbeamertemplate{footline}[footlineon]%添加页脚
 }
-\AtBeginSubsection[]
-{
-	\setbeamertemplate{footline}[footlineoff]%取消页脚
-	\begin{frame}
-		\frametitle{目录}
-		\begin{spacing}{1.5}
-			\hfill
-			\parbox[t]{.95\textwidth}
-			{
-				\begin{minipage}[c][0.75\textheight]{\textwidth}
-					%\tableofcontents[currentsection,currentsubsection]
-					\tableofcontents[currentsection,subsectionstyle=show/shaded/hide]%show,shaded,hide
-				\end{minipage}
-			}
-		\end{spacing}
-	\end{frame}
-	\setbeamertemplate{footline}[footlineon]%添加页脚
-}
+%%%%%%%%%%%%%%%%%%%%%%%
+%%小节开头的目录
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\AtBeginSubsection[]
+%{
+%	\setbeamertemplate{footline}[footlineoff]%取消页脚
+%	\begin{frame}
+%		\frametitle{目录}
+%		\begin{spacing}{1.5}
+%			\hfill
+%			\parbox[t]{.95\textwidth}
+%			{
+%				\begin{minipage}[c][0.75\textheight]{\textwidth}
+%					%\tableofcontents[currentsection,currentsubsection]
+%					\tableofcontents[currentsection,subsectionstyle=show/shaded/hide]%show,shaded,hide
+%				\end{minipage}
+%			}
+%		\end{spacing}
+%	\end{frame}
+%	\setbeamertemplate{footline}[footlineon]%添加页脚
+%}
 
 
